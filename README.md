@@ -37,11 +37,11 @@ public class ExampleSocket : MonoBehaviour {
 	void OnError(ErrorEventArgs events) {}
 
 	void OnData(string data, byte[] rawData) {
-        var rawValue = System.Text.Encoding.UTF8.GetString(rawData);
+		var rawValue = System.Text.Encoding.UTF8.GetString(rawData);
 
-		Debug.Log(rawValue); // JSON value
+		Debug.Log(rawValue); // JSON value of your data, BUT nested as: { "data": <yourdata> }
 
-		Debug.Log(data); // JSON value
+		Debug.Log(data); // JSON value of your data, unnested: <yourdata>
 	}
 
     void Send(string data) {
